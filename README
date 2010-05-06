@@ -1,0 +1,38 @@
+getCPANELbackups.sh is a useful script for saving your backups (home directory
+and databases) from a web server which has cPanel installed and configured. Even
+if the majority of hosting providers offer you means to backup your files and
+some of them do keep these, from time to time they delete them in order to save
+space.
+
+What happens if your web-site got hacked and the only backup with your clean
+files was removed?
+
+This script offers you an automated mode of getting your backups from your
+web server. By calling it from a CRON job, you can rest assured that you
+*always* are in charge of your backups.
+
+Usage instructions:
+================================================================================
+getCPANELbackups.sh needs several configuration files in order to work:
+
+1.	Main configuration file - getCPANELbackups.conf (global settings)
+	- for details on configuration check the supplied file
+
+2.	Domain configuration files (one for every domain). See the example.com file
+	included in the package. Every domain configuration file should be named
+	like the domain it is used for without any other extension (e.g. foo.com,
+	bar.com).
+
+After the aforementioned files have been created you can run the script manually
+or set it as part of a CRON job, e.g.:
+00 00 * * * /home/user/bin/getCPANELbackups.sh
+
+The CRON job from above will run the script every day at 00:00.
+
+Security:
+================================================================================
+Because your domain configuration files contain sensible data (username,
+password) it's better to keep them as private as possible. This means 0600
+file permissions so that no user besides you has access to them.
+
+Furthermore, be careful not to make them public by accident.
