@@ -28,7 +28,7 @@ get_size() {
 	file="$1"
 	sizeInBytes=`$stat -c%s $file`
 	sizeInKBytes=`echo "scale=2; $sizeInBytes/1024" | $bc`
-	sizeInMBytes=`echo "sacle=2; $sizeInKBytes/1024" | $bc`
+	sizeInMBytes=`echo "scale=2; $sizeInKBytes/1024" | $bc`
 	if [[ "$size_units" == "MB" ]]; then
 		echo $sizeInMBytes
 	fi
