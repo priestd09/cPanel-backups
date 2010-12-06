@@ -71,7 +71,7 @@ backup() {
 				done
 				echo
 			else
-				echo -e "\tCannot fin configuration file: $cdir/$domain!"
+				echo -e "\tCannot find configuration file: $cdir/$domain!"
 			fi
 		done
 	else
